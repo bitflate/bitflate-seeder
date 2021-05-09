@@ -421,14 +421,14 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed.bitflate.org", ""};
-static const string testnet_seeds[] = {"testnet-seed.bitflate.org",
-                                       ""};
+static const string mainnet_seeds[] = {"s2.bitflate.org", ""};
+static const string testnet_seeds[] = {"s2.bitflate.org", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 7333), true);
+    //db.Add(CService("kjy2eqzk4zwi5zd3.onion", 7333), true);
+    db.Add(CService("157.230.117.175", 7333), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
